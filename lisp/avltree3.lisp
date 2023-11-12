@@ -219,6 +219,7 @@
     (setq z (avlnode3-right y))
     (unless (eq x z)
       (return y))
+    (setq x y y (avlnode3-parent y))
     (go parent-loop)))
 
 (defun prev-avlnode3 (x)
@@ -242,6 +243,7 @@
     (setq z (avlnode3-left y))
     (unless (eq x z)
       (return y))
+    (setq x y y (avlnode3-parent y))
     (go parent-loop)))
 
 

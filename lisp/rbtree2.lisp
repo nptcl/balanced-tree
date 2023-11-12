@@ -255,6 +255,7 @@
     (setq z (rbnode2-right y))
     (unless (eq x z)
       (return y))
+    (setq x y y (rbnode2-parent y))
     (go parent-loop)))
 
 (defun prev-rbnode2 (x)
@@ -278,14 +279,13 @@
     (setq z (rbnode2-left y))
     (unless (eq x z)
       (return y))
+    (setq x y y (rbnode2-parent y))
     (go parent-loop)))
 
 
 ;;
 ;;  rotate
 ;;
-
-;;  node
 (defun rotate-left-rbnode2 (node)
   (let* ((p (rbnode2-parent node))
          (leftp (and p (eq (rbnode2-left p) node)))

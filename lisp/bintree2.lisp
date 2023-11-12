@@ -217,6 +217,7 @@
     (setq z (binnode2-right y))
     (unless (eq x z)
       (return y))
+    (setq x y y (binnode2-parent y))
     (go parent-loop)))
 
 (defun prev-binnode2 (x)
@@ -240,6 +241,7 @@
     (setq z (binnode2-left y))
     (unless (eq x z)
       (return y))
+    (setq x y y (binnode2-parent y))
     (go parent-loop)))
 
 
